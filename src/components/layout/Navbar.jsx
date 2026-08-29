@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import logo from '../../assets/images/shared/logo.png';
 import './Navbar.css';
@@ -6,6 +6,7 @@ import { SITE_INFO } from '../../data/siteContent';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
     { label: 'Support Circles', path: '/' },
@@ -16,12 +17,17 @@ export default function Navbar() {
     { label: 'Blog', path: SITE_INFO.socials.substack, external: true },
   ];
 
+  const isActive = (path) => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname.startsWith(path);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
-       {/*} <Link to="/" className="navbar-logo">
+        <Link to="/" className="navbar-logo">
           <img src={logo} alt="Hoopinkai" className="navbar-logo-img" />
-        </Link>*/}
+        </Link>
 
         <button
           className={`navbar-toggle ${isOpen ? 'active' : ''}`}
@@ -44,7 +50,11 @@ export default function Navbar() {
               </li>
             ) : (
               <li key={item.label} className="navbar-item">
-                <Link to={item.path} className="navbar-link" onClick={() => setIsOpen(false)}>
+                <Link
+                  to={item.path}
+                  className={`navbar-link ${isActive(item.path) ? 'active' : ''}`}
+                  onClick={() => setIsOpen(false)}
+                >
                   {item.label}
                 </Link>
               </li>
@@ -52,7 +62,7 @@ export default function Navbar() {
           )}
           <li className="navbar-item navbar-item-cta">
             <a href={`tel:${SITE_INFO.phone}`} className="navbar-cta">
-              {SITE_INFO.phone}
+              Contact
             </a>
           </li>
         </ul>
