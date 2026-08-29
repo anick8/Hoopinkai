@@ -5,7 +5,8 @@ export const SITE_INFO = {
   email: 'hello@hoopinkai.com',
   location: 'Nelamangala, Bangalore, India',
   socials: {
-    instagram: 'https://www.instagram.com/hoopinkai/',
+    instagram: 'https://www.instagram.com/hoopinkai_farm_retreat',
+    whatsapp: 'https://wa.me/919970256379',
     linkedin: 'https://www.linkedin.com/in/yamini-gowda-a0b904104/',
     substack: 'https://yamig.substack.com/',
   },

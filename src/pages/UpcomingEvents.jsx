@@ -1,6 +1,7 @@
 import Hero from '../components/common/Hero';
 import Section from '../components/common/Section';
 import Button from '../components/common/Button';
+import { InstagramLogo, WhatsappLogo } from '@phosphor-icons/react';
 import './Events.css';
 import heroImg from '../assets/images/home/hero.jpg';
 import { SITE_INFO } from '../data/siteContent';
@@ -16,20 +17,24 @@ export default function UpcomingEvents() {
           <div className="events-cta">
             <p>Follow us for updates:</p>
             <div className="social-links">
-              <Button
+              <a
                 href={SITE_INFO.socials.instagram}
-                variant="secondary"
-                size="md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon instagram-icon"
+                aria-label="Follow us on Instagram"
               >
-                Instagram
-              </Button>
-              <Button
-                href={`https://wa.me/919970256379`}
-                variant="secondary"
-                size="md"
+                <InstagramLogo size={40} weight="fill" />
+              </a>
+              <a
+                href={SITE_INFO.socials.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon whatsapp-icon"
+                aria-label="Contact us on WhatsApp"
               >
-                WhatsApp
-              </Button>
+                <WhatsappLogo size={40} weight="fill" />
+              </a>
             </div>
           </div>
           <p className="or-text">or</p>
