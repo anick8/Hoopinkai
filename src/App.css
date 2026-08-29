@@ -1,0 +1,12 @@
+/* App root styles - minimal, most styling in component CSS files */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-cream-100);
+}
+
+.layout-main {
+  flex: 1;
+}

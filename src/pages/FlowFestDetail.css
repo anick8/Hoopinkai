@@ -1,0 +1,198 @@
+.flowfest-page {
+  background-color: var(--color-cream-100);
+}
+
+.event-description {
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-relaxed);
+  text-align: center;
+  color: var(--color-brown-800);
+}
+
+.itinerary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.itinerary-card h3 {
+  color: var(--color-forest-700);
+  font-size: var(--fs-lg);
+}
+
+.day-title {
+  font-weight: 600;
+  color: var(--color-terracotta-600);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.itinerary-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.itinerary-card li {
+  font-size: var(--fs-sm);
+  color: var(--color-brown-800);
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+.itinerary-card li:before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-moss-500);
+  font-weight: bold;
+}
+
+.facilitators-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.facilitator-card h3 {
+  font-size: var(--fs-base);
+  margin-bottom: var(--space-2);
+}
+
+.facilitator-specialty {
+  font-size: var(--fs-sm);
+  color: var(--color-terracotta-600);
+  font-weight: 500;
+  margin: 0;
+}
+
+.venue-content {
+  max-width: 700px;
+  margin: var(--space-6) auto 0;
+  padding: var(--space-6) var(--space-4);
+  background-color: var(--color-cream-50);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-moss-500);
+}
+
+.venue-content h3 {
+  color: var(--color-forest-700);
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-2);
+}
+
+.venue-content p {
+  color: var(--color-brown-800);
+  margin-bottom: var(--space-3);
+}
+
+.venue-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+}
+
+.venue-content li {
+  position: relative;
+  padding-left: var(--space-3);
+}
+
+.venue-content li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-moss-500);
+  font-weight: bold;
+}
+
+.pricing-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+.pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
+  background-color: var(--color-cream-50);
+  border-radius: var(--radius-md);
+  gap: var(--space-3);
+}
+
+.pricing-type {
+  font-weight: 600;
+  color: var(--color-forest-700);
+}
+
+.pricing-status {
+  display: inline-block;
+  background-color: var(--color-clay-400);
+  color: var(--color-cream-100);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.pricing-note {
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--color-brown-500);
+  max-width: 600px;
+  margin: var(--space-4) auto 0;
+}
+
+.registration-closed {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-cream-100);
+}
+
+.registration-closed p {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+  color: var(--color-clay-400);
+}
+
+.contact-text {
+  font-size: var(--fs-base);
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .pricing-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pricing-table {
+    grid-template-columns: 1fr;
+  }
+
+  .itinerary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facilitators-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

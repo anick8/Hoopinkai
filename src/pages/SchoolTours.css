@@ -1,0 +1,216 @@
+.school-tours-page {
+  background-color: var(--color-cream-100);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.why-card h3 {
+  color: var(--color-forest-700);
+}
+
+.target-badge {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-4);
+  background-color: var(--color-cream-50);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-terracotta-600);
+  text-align: center;
+}
+
+.target-badge span {
+  display: block;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--color-terracotta-600);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+}
+
+.target-badge p {
+  margin: 0;
+  color: var(--color-brown-800);
+}
+
+.itinerary {
+  max-width: 700px;
+  margin: var(--space-6) auto 0;
+  position: relative;
+}
+
+.itinerary::before {
+  content: '';
+  position: absolute;
+  left: 60px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-terracotta-600), var(--color-moss-300));
+}
+
+.itinerary-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  position: relative;
+}
+
+.itinerary-item::before {
+  content: '';
+  position: absolute;
+  left: 55px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-terracotta-600);
+  border-radius: 50%;
+  border: 3px solid var(--color-cream-100);
+}
+
+.itinerary-time {
+  font-weight: 600;
+  color: var(--color-terracotta-600);
+  font-size: var(--fs-base);
+}
+
+.itinerary-activity {
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-cream-50);
+  border-radius: var(--radius-md);
+  color: var(--color-brown-800);
+}
+
+.optional-addons {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  background-color: var(--color-moss-300);
+  border-radius: var(--radius-md);
+  color: var(--color-cream-100);
+}
+
+.optional-addons p {
+  margin: 0 0 var(--space-2) 0;
+  font-weight: 600;
+}
+
+.optional-addons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.optional-addons li {
+  padding-left: var(--space-3);
+  position: relative;
+}
+
+.optional-addons li:before {
+  content: '→';
+  position: absolute;
+  left: 0;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-5);
+  margin: var(--space-6) 0;
+}
+
+.pricing-card h3 {
+  color: var(--color-forest-700);
+}
+
+.price {
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--color-terracotta-600);
+  margin-bottom: var(--space-2);
+  font-family: var(--font-heading);
+}
+
+.pricing-note {
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--color-brown-500);
+  margin-top: var(--space-4);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.location-content {
+  max-width: 700px;
+  margin: var(--space-6) auto 0;
+}
+
+.location-info h3 {
+  color: var(--color-forest-700);
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-2);
+}
+
+.location-info p {
+  color: var(--color-brown-500);
+  margin-bottom: var(--space-3);
+}
+
+.location-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--fs-base);
+  color: var(--color-brown-800);
+}
+
+.cta-content {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-cream-100);
+}
+
+.cta-content h3 {
+  color: var(--color-moss-300);
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-3);
+}
+
+.cta-content p {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .itinerary::before {
+    left: 50px;
+  }
+
+  .itinerary-item {
+    grid-template-columns: 80px 1fr;
+  }
+
+  .itinerary-item::before {
+    left: 45px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}

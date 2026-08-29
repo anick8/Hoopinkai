@@ -1,0 +1,71 @@
+:root {
+  /* Color Palette - Green/Earthy Theme */
+  --color-forest-900: #1B3A2B;
+  --color-forest-700: #2F5233;
+  --color-moss-500: #5C7A4E;
+  --color-moss-300: #8FA878;
+  --color-terracotta-600: #C1652F;
+  --color-clay-400: #D98E52;
+  --color-cream-100: #FAF6EE;
+  --color-cream-50: #FFFDF8;
+  --color-brown-800: #3E2F23;
+  --color-brown-500: #6B5745;
+  --color-gold-400: #E8B84B;
+
+  /* Typography */
+  --font-heading: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Type Scale (rem-based) */
+  --fs-xs: 0.8rem;
+  --fs-sm: 0.9rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.5rem;
+  --fs-3xl: 3.25rem;
+
+  /* Line Heights */
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --space-8: 6rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-sm: 0 2px 8px rgba(62, 47, 35, 0.06);
+  --shadow-md: 0 4px 20px rgba(62, 47, 35, 0.08);
+  --shadow-lg: 0 8px 32px rgba(62, 47, 35, 0.1);
+  --shadow-xl: 0 12px 48px rgba(62, 47, 35, 0.12);
+
+  /* Layout */
+  --container-max: 1120px;
+  --container-pad: var(--space-6);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}
+
+/* Light/Dark mode support (optional for future) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Keep same palette for now - earthy theme is naturally warm */
+  }
+}

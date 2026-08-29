@@ -1,0 +1,68 @@
+.circle-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.circle-schedule {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-terracotta-600);
+  margin: 0 0 var(--space-2) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.circle-description {
+  color: var(--color-brown-500);
+  margin-bottom: var(--space-3);
+  line-height: var(--lh-relaxed);
+}
+
+.circle-topics {
+  margin: var(--space-3) 0;
+  flex-grow: 1;
+}
+
+.circle-topics h4 {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-forest-700);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+  font-family: var(--font-body);
+}
+
+.circle-topics ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.circle-topics li {
+  font-size: var(--fs-sm);
+  color: var(--color-brown-800);
+  position: relative;
+  padding-left: var(--space-4);
+  line-height: var(--lh-normal);
+}
+
+.circle-topics li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-moss-500);
+  font-weight: bold;
+}
+
+.circle-actions {
+  margin-top: var(--space-4);
+  display: flex;
+  gap: var(--space-2);
+}
+
+.circle-actions .btn {
+  flex: 1;
+}
