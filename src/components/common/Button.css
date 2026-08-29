@@ -35,7 +35,8 @@
 }
 
 .btn-primary:hover {
-  background-color: var(--color-clay-400);
+  background-color: #7a3512;
+  color: var(--color-cream-100);
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(193, 101, 47, 0.2);
 }

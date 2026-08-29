@@ -26,6 +26,14 @@
   color: var(--color-terracotta-600);
 }
 
+.section-forest-900 .btn {
+  color: var(--color-cream-100);
+}
+
+.section-forest-900 .btn-secondary {
+  color: var(--color-forest-700);
+}
+
 .section-content {
   max-width: var(--container-max);
   margin: 0 auto;
