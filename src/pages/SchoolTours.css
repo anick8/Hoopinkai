@@ -2,218 +2,624 @@
   background-color: var(--color-cream-100);
 }
 
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-5);
-  margin-top: var(--space-6);
-}
-
-.why-card h3 {
-  color: var(--color-forest-700);
-}
-
-.target-badge {
-  max-width: 600px;
+/* ========== WHY TEACH SECTION ========== */
+.why-section {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: var(--space-4);
+  padding: 0 var(--space-5);
+}
+
+.why-header {
+  margin-bottom: var(--space-8);
+  text-align: left;
+}
+
+.why-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-forest-700);
+  line-height: 1.1;
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.02em;
+}
+
+.why-subtitle {
+  font-size: var(--fs-lg);
+  color: var(--color-brown-600);
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* Asymmetric zig-zag grid */
+.why-grid-asymmetric {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.why-card-premium {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-5);
   background-color: var(--color-cream-50);
   border-radius: var(--radius-lg);
-  border-left: 4px solid var(--color-terracotta-600);
-  text-align: center;
-}
-
-.target-badge span {
-  display: block;
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  color: var(--color-terracotta-600);
-  margin-bottom: var(--space-2);
-  text-transform: uppercase;
-}
-
-.target-badge p {
-  margin: 0;
-  color: var(--color-brown-800);
-}
-
-.itinerary {
-  max-width: 700px;
-  margin: var(--space-6) auto 0;
+  border: 1px solid rgba(139, 113, 82, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  overflow: hidden;
 }
 
-.itinerary::before {
+.why-card-premium::before {
   content: '';
   position: absolute;
-  left: 60px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--color-terracotta-600), var(--color-moss-300));
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200, 145, 82, 0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
 }
 
-.itinerary-item {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: var(--space-4);
-  margin-bottom: var(--space-4);
-  position: relative;
+.why-card-premium:hover {
+  transform: translateX(8px);
+  border-color: rgba(200, 145, 82, 0.2);
+  background-color: var(--color-cream-100);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-.itinerary-item::before {
-  content: '';
-  position: absolute;
-  left: 55px;
-  top: 8px;
-  width: 12px;
-  height: 12px;
-  background-color: var(--color-terracotta-600);
-  border-radius: 50%;
-  border: 3px solid var(--color-cream-100);
+.why-card-premium:hover::before {
+  opacity: 1;
 }
 
-.itinerary-time {
-  font-weight: 600;
-  color: var(--color-terracotta-600);
-  font-size: var(--fs-base);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  line-height: var(--lh-tight);
-}
-
-.itinerary-activity {
-  padding: var(--space-3) var(--space-4);
-  background-color: var(--color-cream-50);
-  border-radius: var(--radius-md);
-  color: var(--color-brown-800);
-}
-
-.optional-addons {
-  margin-top: var(--space-6);
-  padding: var(--space-4);
-  background-color: var(--color-moss-300);
-  border-radius: var(--radius-md);
-  color: var(--color-cream-100);
-}
-
-.optional-addons p {
-  margin: 0 0 var(--space-2) 0;
-  font-weight: 600;
-}
-
-.optional-addons ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.optional-addons li {
-  padding-left: var(--space-3);
-  position: relative;
-}
-
-.optional-addons li:before {
-  content: '→';
-  position: absolute;
-  left: 0;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-5);
-  margin: var(--space-6) 0;
-}
-
-.pricing-card h3 {
-  color: var(--color-forest-700);
-}
-
-.price {
+.why-card-index {
   font-size: var(--fs-2xl);
   font-weight: 700;
   color: var(--color-terracotta-600);
-  margin-bottom: var(--space-2);
-  font-family: var(--font-heading);
+  line-height: 1;
+  opacity: 0.6;
 }
 
-.pricing-note {
-  text-align: center;
-  font-size: var(--fs-sm);
-  color: var(--color-brown-500);
-  margin-top: var(--space-4);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.location-content {
-  max-width: 700px;
-  margin: var(--space-6) auto 0;
-}
-
-.location-info h3 {
-  color: var(--color-forest-700);
+.why-card-content h3 {
   font-size: var(--fs-xl);
-  margin-bottom: var(--space-2);
+  font-weight: 600;
+  color: var(--color-forest-700);
+  margin: 0 0 var(--space-2) 0;
+  line-height: 1.3;
 }
 
-.location-info p {
-  color: var(--color-brown-500);
-  margin-bottom: var(--space-3);
+.why-card-content p {
+  font-size: var(--fs-base);
+  color: var(--color-brown-700);
+  margin: 0;
+  line-height: 1.6;
 }
 
-.location-details {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 var(--space-4) 0;
+/* Zig-zag offset for desktop */
+@media (min-width: 769px) {
+  .why-grid-asymmetric {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .why-card-1 {
+    margin-right: 10%;
+  }
+
+  .why-card-2 {
+    margin-left: 10%;
+    margin-top: calc(var(--space-4) * -1);
+  }
+}
+
+/* ========== TARGET BADGE ========== */
+.target-section {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-8) var(--space-5);
+}
+
+.target-badge-premium {
+  max-width: 500px;
+  padding: var(--space-8);
+  background: linear-gradient(135deg, var(--color-cream-50) 0%, rgba(200, 145, 82, 0.05) 100%);
+  border: 2px solid var(--color-terracotta-600);
+  border-radius: var(--radius-2xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.target-badge-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 60%, rgba(139, 113, 82, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.badge-number {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  color: var(--color-terracotta-600);
+  line-height: 1;
+  margin-bottom: var(--space-1);
+  position: relative;
+  z-index: 1;
+}
+
+.badge-label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-brown-600);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-3);
+  position: relative;
+  z-index: 1;
+}
+
+.badge-description {
+  font-size: var(--fs-base);
+  color: var(--color-brown-700);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== INTERACTIVE ITINERARY ========== */
+.itinerary-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.itinerary-header {
+  margin-bottom: var(--space-8);
+}
+
+.itinerary-header h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-forest-700);
+  line-height: 1.1;
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.02em;
+}
+
+.itinerary-header p {
+  font-size: var(--fs-lg);
+  color: var(--color-brown-600);
+  margin: 0;
+  max-width: 60ch;
+}
+
+.itinerary-premium {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.itinerary-card {
+  padding: var(--space-4);
+  background-color: var(--color-cream-50);
+  border: 1px solid rgba(139, 113, 82, 0.15);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.itinerary-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--color-terracotta-600), var(--color-moss-300));
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.itinerary-card:hover {
+  background-color: var(--color-cream-100);
+  border-color: rgba(200, 145, 82, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transform: translateX(6px);
+}
+
+.itinerary-card:hover::before {
+  opacity: 1;
+}
+
+.itinerary-card.expanded {
+  background-color: var(--color-moss-300);
+  border-color: var(--color-moss-400);
+  color: var(--color-cream-100);
+}
+
+.itinerary-card.expanded .itinerary-card-time,
+.itinerary-card.expanded .itinerary-card-activity {
+  color: var(--color-cream-100);
+}
+
+.itinerary-card-inner {
+  display: grid;
+  grid-template-columns: 100px 1fr 40px;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.itinerary-card-time {
+  font-weight: 600;
+  font-size: var(--fs-base);
+  color: var(--color-terracotta-600);
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.itinerary-card.expanded .itinerary-card-time {
+  color: var(--color-cream-100);
+}
+
+.itinerary-card-activity {
   font-size: var(--fs-base);
   color: var(--color-brown-800);
+  line-height: 1.5;
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.cta-content {
-  max-width: var(--container-max);
+.itinerary-card.expanded .itinerary-card-activity {
+  color: var(--color-cream-100);
+}
+
+.itinerary-card-expand-icon {
+  font-size: var(--fs-lg);
+  color: var(--color-terracotta-600);
+  font-weight: 700;
+  text-align: right;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.itinerary-card:hover .itinerary-card-expand-icon {
+  transform: translateX(4px);
+}
+
+.itinerary-card.expanded .itinerary-card-expand-icon {
+  color: var(--color-cream-100);
+  transform: rotate(90deg);
+}
+
+/* ========== OPTIONAL ADD-ONS ========== */
+.optional-addons-premium {
+  padding: var(--space-6);
+  background-color: var(--color-moss-100);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-moss-200);
+}
+
+.optional-addons-premium h3 {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--color-forest-700);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.addons-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.addon-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-base);
+  color: var(--color-brown-800);
+  padding: var(--space-2) 0;
+}
+
+.addon-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-moss-300);
+  border-radius: 50%;
+  color: var(--color-cream-100);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+}
+
+/* ========== PRICING SECTION ========== */
+.pricing-section {
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.pricing-header {
+  margin-bottom: var(--space-8);
+}
+
+.pricing-header h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-forest-700);
+  line-height: 1.1;
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.02em;
+}
+
+.pricing-header p {
+  font-size: var(--fs-lg);
+  color: var(--color-brown-600);
+  margin: 0;
+  max-width: 60ch;
+}
+
+.pricing-grid-premium {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.pricing-card-premium {
+  padding: var(--space-6);
+  background-color: var(--color-cream-50);
+  border: 1px solid rgba(139, 113, 82, 0.15);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200, 145, 82, 0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.pricing-card-premium:hover {
+  transform: translateY(-8px);
+  border-color: rgba(200, 145, 82, 0.3);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-card-premium:hover::before {
+  opacity: 1;
+}
+
+.pricing-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-type {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--color-forest-700);
+}
+
+.pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-terracotta-600);
+  color: var(--color-cream-100);
+  border-radius: 50%;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+
+.pricing-price {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-terracotta-600);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-description {
+  font-size: var(--fs-sm);
+  color: var(--color-brown-600);
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-footnote {
+  font-size: var(--fs-sm);
+  color: var(--color-brown-500);
+  line-height: 1.5;
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(139, 113, 82, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== LOCATION SECTION ========== */
+.location-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.location-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.location-info-premium h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-forest-700);
+  margin: 0 0 var(--space-2) 0;
+  line-height: 1.2;
+}
+
+.location-area {
+  font-size: var(--fs-lg);
+  color: var(--color-brown-600);
+  margin: 0 0 var(--space-6) 0;
+}
+
+.access-info {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.access-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background-color: var(--color-cream-50);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(139, 113, 82, 0.1);
+}
+
+.access-icon {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--color-terracotta-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.access-time {
+  font-size: var(--fs-base);
+  color: var(--color-brown-800);
+  font-weight: 500;
+  margin: 0;
+}
+
+.map-button {
+  width: fit-content;
+}
+
+.location-visual {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.location-stat {
+  padding: var(--space-6);
+  background: linear-gradient(135deg, var(--color-moss-300) 0%, var(--color-moss-400) 100%);
+  border-radius: var(--radius-lg);
   text-align: center;
   color: var(--color-cream-100);
 }
 
-.cta-content h3 {
+.stat-number {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.stat-label {
+  font-size: var(--fs-base);
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+/* ========== CTA SECTION ========== */
+.cta-section {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--space-8) var(--space-5);
+  color: var(--color-cream-100);
+}
+
+.cta-section h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
   color: var(--color-moss-300);
-  font-size: var(--fs-2xl);
-  margin-bottom: var(--space-3);
+  margin: 0 0 var(--space-3) 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
-.cta-content p {
+.cta-section p {
   font-size: var(--fs-lg);
-  margin-bottom: var(--space-6);
+  margin: 0 0 var(--space-6) 0;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
-  .why-grid {
+  .why-grid-asymmetric {
+    display: grid;
     grid-template-columns: 1fr;
   }
 
-  .itinerary::before {
-    left: 50px;
+  .why-card-1,
+  .why-card-2 {
+    margin: 0;
   }
 
-  .itinerary-item {
-    grid-template-columns: 100px 1fr;
+  .why-card-premium {
+    grid-template-columns: 60px 1fr;
+    gap: var(--space-3);
+    padding: var(--space-4);
   }
 
-  .itinerary-item::before {
-    left: 45px;
+  .why-card-index {
+    font-size: var(--fs-lg);
   }
 
-  .pricing-grid {
+  .itinerary-card-inner {
+    grid-template-columns: 80px 1fr;
+    gap: var(--space-3);
+  }
+
+  .itinerary-card-expand-icon {
+    display: none;
+  }
+
+  .itinerary-card:hover {
+    transform: translateX(0);
+  }
+
+  .location-split {
     grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .pricing-grid-premium {
+    grid-template-columns: 1fr;
+  }
+
+  .target-badge-premium {
+    padding: var(--space-6);
+  }
+
+  .badge-number {
+    font-size: 2.5rem;
   }
 }
