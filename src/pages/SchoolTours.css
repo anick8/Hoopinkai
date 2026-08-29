@@ -55,7 +55,7 @@
 
 .itinerary-item {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 140px 1fr;
   gap: var(--space-4);
   margin-bottom: var(--space-4);
   position: relative;
@@ -77,6 +77,9 @@
   font-weight: 600;
   color: var(--color-terracotta-600);
   font-size: var(--fs-base);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: var(--lh-tight);
 }
 
 .itinerary-activity {
@@ -203,7 +206,7 @@
   }
 
   .itinerary-item {
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 100px 1fr;
   }
 
   .itinerary-item::before {

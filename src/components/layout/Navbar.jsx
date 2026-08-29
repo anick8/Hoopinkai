@@ -19,9 +19,9 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
+       {/*} <Link to="/" className="navbar-logo">
           <img src={logo} alt="Hoopinkai" className="navbar-logo-img" />
-        </Link>
+        </Link>*/}
 
         <button
           className={`navbar-toggle ${isOpen ? 'active' : ''}`}

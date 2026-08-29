@@ -12,7 +12,12 @@ export default function Card({
     <div className={`card ${className}`} onClick={onClick} role={onClick ? 'button' : undefined}>
       {image && (
         <div className="card-image-wrapper">
-          <img src={image} alt={title || 'Card image'} className="card-image" />
+          <img
+            src={image}
+            alt={title || 'Card image'}
+            className="card-image"
+            loading="lazy"
+          />
         </div>
       )}
       <div className="card-content">

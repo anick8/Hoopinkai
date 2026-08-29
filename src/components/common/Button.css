@@ -88,6 +88,11 @@
   transform: none !important;
 }
 
+.btn:focus-visible {
+  outline: 2px solid var(--color-terracotta-600);
+  outline-offset: 2px;
+}
+
 @media (max-width: 768px) {
   .btn {
     font-size: var(--fs-sm);

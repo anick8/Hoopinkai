@@ -62,10 +62,3 @@
   --transition-normal: 250ms ease-in-out;
   --transition-slow: 350ms ease-in-out;
 }
-
-/* Light/Dark mode support (optional for future) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Keep same palette for now - earthy theme is naturally warm */
-  }
-}

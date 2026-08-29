@@ -110,8 +110,13 @@ export default function SignupForm() {
       </div>
 
       <div className="form-actions">
-        <Button type="submit" variant="primary" size="lg">
-          Send Inquiry
+        <Button
+          type="submit"
+          variant="primary"
+          size="lg"
+          disabled={submitted}
+        >
+          {submitted ? '✓ Sent Successfully!' : 'Send Inquiry'}
         </Button>
         <p className="form-note">Or call us directly: <a href={`tel:${SITE_INFO.phone}`}>{SITE_INFO.phone}</a></p>
       </div>

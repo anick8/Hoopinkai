@@ -6,6 +6,9 @@ export default function Hero({ image, title, subtitle, children, className = '' 
       className={`hero ${className}`}
       style={{
         backgroundImage: `linear-gradient(rgba(27, 58, 43, 0.55), rgba(27, 58, 43, 0.75)), url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
       }}
     >
       <div className="hero-content">

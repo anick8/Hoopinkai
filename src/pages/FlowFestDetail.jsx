@@ -30,6 +30,13 @@ export default function FlowFestDetail() {
 
   return (
     <div className="flowfest-page">
+      <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol>
+          <li><Link to="/past-events">Past Events</Link></li>
+          <li><span aria-current="page">{event.edition}</span></li>
+        </ol>
+      </nav>
+
       <Hero image={heroImg} title={event.title} subtitle={event.theme} />
 
       {event.description && (
